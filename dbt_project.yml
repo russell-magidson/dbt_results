@@ -34,12 +34,10 @@ on-run-end:
   - "{{ log_dbt_results(results) }}"
 
 models:
-  dbt_results:
-    +materialized: table
 
-    04_dm:
-      dbt-results:
-        +database: us-atldm-test-dev-9198
-        +schema: BI_BackOffice_monitoring
-        +tags: 
-          - monitoring
+  04_dm:
+    dbt-results:
+      +database: us-atldm-test-dev-9198
+      +schema: BI_BackOffice_monitoring
+      +tags: 
+        - monitoring
