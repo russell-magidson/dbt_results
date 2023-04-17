@@ -30,6 +30,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
+on-run-end: 
+  - "{{ log_dbt_results(results) }}"
+
 models:
   dbt_results:
     +materialized: table
