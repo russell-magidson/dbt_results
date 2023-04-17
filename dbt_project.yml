@@ -34,8 +34,6 @@ on-run-end:
   - "{{ log_dbt_results(results) }}"
 
 models:
-  dbt_results:
-    +materialized: table
 
     04_dm:
       dbt_results:
