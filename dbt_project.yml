@@ -38,8 +38,14 @@ models:
     +materialized: table
 
     04_dm:
-      dbt-results:
-        +database: us-atldm-test-dev-9198
-        +schema: BI_BackOffice_monitoring
+      dbt_results:
+        +database: |        
+          {%-   if target.name == "sbx_target" -%} us-atldm-test-dev-9198 
+          {%- elif target.name == "dev_target" -%} us-atldm-test-dev-9198
+          {%- elif target.name == "acc_target" -%} us-atldm-test-qa-2114
+          {%- elif target.name == "prd_target" -%} us-atldm-test-prd-99b5
+          {%- else -%} us-atldm-test-dev-9198
+          {%- endif -%}
+        +schema: dbt_monitoring
         +tags: 
           - monitoring

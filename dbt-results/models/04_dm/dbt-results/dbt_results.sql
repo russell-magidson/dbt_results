@@ -8,6 +8,8 @@
 
 with empty_table as (
     select
+        cast( null as string) as project_name, 
+        current_timestamp() as run_started_at, 
         cast( null as string) as result_id,
         cast( null as string) as invocation_id,
         cast( null as string) as unique_id,
@@ -17,7 +19,7 @@ with empty_table as (
         cast( null as string) as resource_type,
         cast( null as string) as status,
         cast( null as float64) as execution_time,
-        cast( null as int) as rows_affected
+        cast( null as int) as rows_affected 
 )
 
 select * from empty_table
