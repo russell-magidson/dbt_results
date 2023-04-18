@@ -16,6 +16,7 @@ If the dbt_results table does not yet exist (or needed to be recreated) in the d
 
 ## Usage
 Once the package is installed it will automatically execute an _on_run_end_ macro that will insert one row for each model in the dbt run
+Before using for the first time, change your dbt profile from the default 'dbt_base' to the name of your git project (eg. 'us-dbt-something')
 
 ## Roadmap
 Future enhancements
