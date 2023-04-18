@@ -8,8 +8,8 @@ This may change in the future
 
 ## Installation
 Add to packages.yml:
-packages:
-  \- git: "https://github.com/russell-magidson/dbt_results.git"
+packages:  
+  \- git: "https://github.com/russell-magidson/dbt_results.git"  
     revision: 1.0.2
 
 If the dbt_results table does not yet exist (or needed to be recreated) in the desired environment, execute a local _dbt run -m dbt_results_ against the appropriate target_env to create it
