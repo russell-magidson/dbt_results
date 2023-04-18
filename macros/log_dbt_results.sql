@@ -5,7 +5,20 @@
         {%- if parsed_results | length  > 0 -%}
             {% set insert_dbt_results_query -%}
                 insert into {{ ref('dbt_results') }}
-                values
+                   (
+                        project_name, 
+                        run_started_at, 
+                        result_id,
+                        invocation_id,
+                        unique_id,
+                        database_name,
+                        schema_name,
+                        table_name,
+                        resource_type,
+                        status,
+                        execution_time,
+                        rows_affected 
+                ) values
                     {%- for parsed_result_dict in parsed_results -%}
                         (
                             '{{ project_name }}', 
